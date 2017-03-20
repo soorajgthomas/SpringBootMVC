@@ -1,5 +1,6 @@
 package com.sooraj.springboot.web.controller;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +24,7 @@ public class WebApplicationController {
 	}
 
     @RequestMapping(value = "/sadmin/page", method = RequestMethod.GET)
+	@PreAuthorize("hasRole('ROLE_SUPERADMIN')")
     public ModelAndView sAdminPage() {
         ModelAndView model = new ModelAndView();
         model.addObject("title", welcomeMsg);
@@ -33,8 +35,8 @@ public class WebApplicationController {
     }
 
 	@RequestMapping(value = "/admin/page", method = RequestMethod.GET)
+	@PreAuthorize("hasAnyRole('ROLE_SUPERADMIN','ROLE_ADMIN')")
 	public ModelAndView adminPage() {
-
 		ModelAndView model = new ModelAndView();
 		model.addObject("title", welcomeMsg);
 		model.addObject("message", "This is protected page - Admin Page!");

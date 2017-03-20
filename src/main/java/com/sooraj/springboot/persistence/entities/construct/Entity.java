@@ -10,5 +10,4 @@ public interface Entity<E extends Serializable> extends Serializable,Cloneable,C
     public E getId();
 
     public void setId(E id);
-
 }

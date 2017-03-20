@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div class="espark" style="text-align: center">
+<div style="text-align: center">
     <div class="btn-group btn-block" role="group" aria-label="..." style="text-align: right">
         <h4>
             <c:if test="${pageContext.request.userPrincipal.name != null}">

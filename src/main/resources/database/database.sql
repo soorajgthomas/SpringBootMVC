@@ -2,7 +2,6 @@ DROP TABLE IF EXISTS `user_role_mapping`;
 DROP TABLE IF EXISTS `userrole`;
 DROP TABLE IF EXISTS `user`;
 
-
 CREATE TABLE  `user` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `createdDate` datetime DEFAULT NULL,
@@ -37,6 +36,9 @@ CREATE TABLE  `user_role_mapping` (
   CONSTRAINT `FK5D9A9F9995F6035` FOREIGN KEY (`userRoles_id`) REFERENCES `userrole` (`id`),
   CONSTRAINT `FK5D9A9F9181C6E86` FOREIGN KEY (`User_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 
 
 INSERT INTO `USER`
